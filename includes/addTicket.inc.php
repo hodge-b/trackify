@@ -13,10 +13,11 @@ if(isset($_POST['submit'])){
     $type         = $_POST['type'];
     $priority     = $_POST['priority'];
     $status       = $_POST['status'];
+    $encodedProjectID = urlencode(base64_encode($projectID));
 
     // check for errors
     if(emptyAddTicketInput($title, $description, $estimate)){
-        header('location: ../projects.php?projectID='.$projectID.'&error=emptyinput');
+        header('location: ../projects.php?projectID='.$encodedProjectID.'&error=emptyinput');
         exit();
     }
 

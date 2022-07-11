@@ -11,6 +11,8 @@ if(isset($_POST['submit'])){
     addMembersToProject($conn, $userID, $projectID);
 
 }else{
-    header('location: ../projects.php?projectID='.$projectID);
+    $encodedProjectID = urlencode(base64_encode($projectID));
+
+    header('location: ../projects.php?projectID='.encodedProjectID);
     exit();
 }

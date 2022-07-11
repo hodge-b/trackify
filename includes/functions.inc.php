@@ -82,11 +82,12 @@ function getMembersOnProject($conn, $projectID){
 }
 
 function addMembersToProject($conn, $userID, $projectID){
+    $encodedUrl = urlencode(base64_encode($projectID));
     $query= "INSERT INTO usersProjects(usersProjectsUserID, usersProjectsProjectID) VALUES(?,?)";
 
     $statement = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($statement, $query)){
-        header('location: ../projects.php?projectID='.$projectID);
+        header('location: ../projects.php?projectID='.$encodedUrl);
         exit();
     }
 
@@ -94,16 +95,18 @@ function addMembersToProject($conn, $userID, $projectID){
     mysqli_stmt_execute($statement);
     mysqli_stmt_close($statement);
 
-    header('location: ../projects.php?projectID='.$projectID);
+    header('location: ../projects.php?projectID='.$encodedUrl);
     exit();
 }
 
 function deleteMemberFromProject($conn, $userID, $projectID){
+    $encodedProjectID = urlencode(base64_encode($projectID));
     $query = "DELETE FROM usersProjects WHERE usersProjectsUserID = $userID AND usersProjectsProjectID = $projectID";
+    
     mysqli_query($conn, $query);
     mysqli_close($conn);
 
-    header('location: ../projects.php?projectID='.$projectID);
+    header('location: ../projects.php?projectID='.$encodedProjectID);
     exit();
 }
 
@@ -187,6 +190,7 @@ function getProjects($conn){
 function addTicket($conn, $projectID, $authorID, $title, $description, $assignDevsID, $estimate, $type, $priority, $status){
 
     $query = "INSERT INTO tickets(ticketsProjectID, ticketsAuthorID, ticketsTitle, ticketsDescription, ticketsAssignDevsID, ticketsEstimate, ticketsType, ticketsPriority, ticketsStatus, ticketsDateCreated, ticketsTime) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+    $encodedProjectID = urlencode(base64_encode($projectID));
     $time = time();
     $date = date('Y-m-d');
 
@@ -200,7 +204,7 @@ function addTicket($conn, $projectID, $authorID, $title, $description, $assignDe
     mysqli_stmt_execute($statement);
     mysqli_stmt_close($statement);
 
-    header('location: ../projects.php?projectID='.$projectID);
+    header('location: ../projects.php?projectID='.$encodedProjectID);
     exit();
 }
 
@@ -221,9 +225,10 @@ function getTicketsFromUser($conn, $userID){
 
 function editTicket($conn, $ticketID, $projectID, $title, $description, $assign, $estimate, $type, $priority, $status){
     $query = "UPDATE `tickets` SET `ticketsTitle`= '$title', `ticketsDescription` = '$description', `ticketsAssignDevsID` = '$assign', `ticketsEstimate` = '$estimate', `ticketsType` = '$type', `ticketsPriority` = '$priority', `ticketsStatus` = '$status' WHERE ticketsID = $ticketID";
+    $encodedProjectID = urlencode(base64_encode($projectID));
     mysqli_query($conn, $query);
 
-    header('location: ../projects.php?projectID='.$projectID);
+    header('location: ../projects.php?projectID='.$encodedProjectID);
     exit();
 }
 
@@ -243,6 +248,7 @@ function addComment($conn, $projectID, $authorID, $comment){
     
     $query = 'INSERT INTO comments(commentsProjectID, commentsRowID, commentsAuthorID, commentsComment, commentsTime) VALUES(?,?,?,?,?)';
     $commentRowCount = getCommentRowCount($conn, $projectID) + 1;
+    $encodedProjectID = urlencode(base64_encode($projectID));
     $time = time();
     $date = date('Y-m-d');
 
@@ -256,7 +262,7 @@ function addComment($conn, $projectID, $authorID, $comment){
     mysqli_stmt_execute($statement);
     mysqli_stmt_close($statement);
 
-    header("location: ../projects.php?projectID=" .$projectID);
+    header("location: ../projects.php?projectID=" .$encodedProjectID);
     exit();
 }
 

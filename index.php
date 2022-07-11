@@ -22,10 +22,12 @@
             <button class='btn btn--new-project' style='background-color:#94cc6c;' data-bs-toggle="modal" data-bs-target="#reg-modal">New Project</button>
         </div>
         <?php
-
             $result = getProjects($conn);
+
             while($row = mysqli_fetch_assoc($result)){
-                echo "<a class='text-decoration-none text-dark' href='projects.php?projectID=$row[projectsID]'><div class='container w-100 m-0 px-2 border-bottom'>";
+                $encodedUrl = 'projects.php?projectID='.urlencode(base64_encode($row['projectsID']));
+
+                echo "<a class='text-decoration-none text-dark' href=$encodedUrl ><div class='container w-100 m-0 px-2 border-bottom'>";
                 echo "<h5 class='mt-2 mb-1'>" .$row['projectsName']. "</h5>";
                 echo "<p class='mb-2'>Author: " .getUserName($conn, $row['projectsContributorID']). "</p>";
                 echo "</div></a>";

@@ -14,4 +14,4 @@
     <title>Trackify - Bug Tracker</title>
 </head>
 <body>
-<div class="wrapper">
+<div class="container-sm">
