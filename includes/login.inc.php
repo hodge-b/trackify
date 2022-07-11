@@ -16,6 +16,9 @@ if(isset($_POST['submit'])){
 
     loginUser($conn, $email, $password);
     
+}else if(isset($_POST['register'])){
+    header('location: ../register.php');
+    exit();
 }else{
     header('location: ../login.php');
     exit();

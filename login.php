@@ -6,8 +6,8 @@
         <h4>Bug Tracker</h4>
     </div>
     
-    <div class="container p-2">
-        <div class="card">
+    <div class="row p-2">
+        <div class="card offset-md-3 col-md-6">
             <form class='container-sm p-2' action="includes/login.inc.php" method="POST" >
                 <div class="form-group mb-3">
                     <label class="form-label" id='email-input'>Email address</label>
@@ -20,10 +20,14 @@
                     
                 <div class="form-group d-flex justify-content-evenly">
                     <button class='btn' style='background-color:#94cc6c;' type='submit' name='submit'>Login</button>
-                    <button class='btn' style='background-color:#94cc6c;' type='register' name='register'>Register</button>
+                    <button class='btn' style='background-color:#94cc6c;' name='register'>Register</button>
                 </div>
             </form>
+            <div class="container d-flex justify-content-center">
+                
+            </div>
         </div>
+        
     </div>
 
     <?php
