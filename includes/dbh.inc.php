@@ -1,9 +1,9 @@
 <?php
 
     $dbHost = 'localhost';
-    $dbUser = 'root';
-    $dbPass = 'root';
-    $dbName = 'trackify_bug-tracker';
+    $dbUser = 'trackifyUser';
+    $dbPass = 'pTrackify1111';
+    $dbName = 'trackify_bugtracker';
 
     $conn = mysqli_connect($dbHost, $dbUser, $dbPass, $dbName);
     
