@@ -1,9 +1,10 @@
 <?php
 
-    $dbHost = '107.180.25.122';
-    $dbUser = 'trackifyUser';
-    $dbPass = 'pTrackify1111';
-    $dbName = 'trackify_bugtracker';
+    $cleardb_url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+    $dbHost = $cleardb_url['host'];
+    $dbUser = $cleardb_url['user'];
+    $dbPass = $cleardb_url['pass'];
+    $dbName = $cleardb_url['path'];
 
     $conn = mysqli_connect($dbHost, $dbUser, $dbPass, $dbName);
     
