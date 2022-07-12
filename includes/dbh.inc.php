@@ -1,6 +1,6 @@
 <?php
 
-    $dbHost = 'localhost';
+    $dbHost = 'bradleyhodge.ca';
     $dbUser = 'trackifyUser';
     $dbPass = 'pTrackify1111';
     $dbName = 'trackify_bugtracker';
