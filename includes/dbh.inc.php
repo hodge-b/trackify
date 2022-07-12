@@ -3,7 +3,7 @@
     $cleardb_url = parse_url(getenv("CLEARDB_DATABASE_URL"));
     $dbHost = $cleardb_url["host"];
     $dbUser = $cleardb_url["user"];
-    $dbPass = $cleardb_url["pass"];
+    $dbPass = $cleardb_url["password"];
     $dbName = substr($cleardb_url["path"],1);
 
     $active_group = 'default';
