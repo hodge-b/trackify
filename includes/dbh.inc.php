@@ -1,6 +1,6 @@
 <?php
 
-    $dbHost = 'bradleyhodge.ca';
+    $dbHost = '107.180.25.122';
     $dbUser = 'trackifyUser';
     $dbPass = 'pTrackify1111';
     $dbName = 'trackify_bugtracker';
