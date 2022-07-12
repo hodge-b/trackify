@@ -4,7 +4,12 @@
     $dbHost = $cleardb_url["host"];
     $dbUser = $cleardb_url["user"];
     $dbPass = $cleardb_url["pass"];
-    $dbName = "heroku_dc8dde0412eeba8";
+    $dbName = substr($cleardb_url["path"],1);
+
+    // $dbHost = 'localhost';
+    // $dbUser = 'root';
+    // $dbPass = 'root';
+    // $dbName = 'trackify_bug-tracker';
 
     $active_group = 'default';
     $query_builder= TRUE;

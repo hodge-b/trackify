@@ -30,7 +30,7 @@
     
     <div class="row d-flex justify-content-between">
         <!-- TEAM MEMBERS SECTION -->
-        <div class="card col-md-5 w-90 my-2 mb-4 p-0 border border-dark shadow rounded">
+        <div class="card col-md-5 w-90 my-2 mb-4 p-0 shadow rounded">
 
             <div class="container border-dark border-bottom p-1 d-flex justify-content-between align-items-center">
                 <h4 class='mt-2'>Team Members</h4>
@@ -64,7 +64,7 @@
 
 
         <!-- TICKETS SECTION -->
-        <div class="col-md-5 col-lg-6 w-90 my-2 mb-4 p-0 border border-dark shadow rounded">
+        <div class="col-md-5 col-lg-6 w-90 my-2 mb-4 p-0 shadow rounded">
             <div class="container border-dark border-bottom p-1 d-flex justify-content-between align-items-center">
                 <h4 class='mt-2'>Tickets</h4>
                 <button class='btn btn--add-ticket' style='background-color:#94cc6c;' data-bs-toggle="modal" data-bs-target="#reg-modal">New Ticket</button>
@@ -94,7 +94,7 @@
 
     <div class="row mt-lg-5">
         <!-- COMMENTS SECTION -->
-        <div class="card w-90 my-2 p-0 border border-dark shadow rounded">
+        <div class="card w-90 my-2 p-0 shadow rounded">
             <div class="container border-dark border-bottom p-1 d-flex justify-content-between align-items-center">
                 <h4 class='mt-2'>Comments</h4>
             </div>

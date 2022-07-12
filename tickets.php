@@ -18,7 +18,7 @@
 ?>
 
 <section class='container'>
-    <div class="container w-90 mt-2 p-0 border border-dark shadow rounded">
+    <div class="container w-90 mt-2 p-0 shadow rounded">
         <div class="container border-dark border-bottom p-1 d-flex justify-content-between align-items-center">
             <h4 class='mt-2'>My Tickets</h4>
         </div>

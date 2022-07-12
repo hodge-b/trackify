@@ -23,7 +23,7 @@
 
 <section class='container'>
     <h4 class="pt-2 mx-2 mb-3" style="border-bottom: 2px solid #94cc6c; width:max-content"><?= $projectRow['projectsName']?></h4>
-    <div class="container w-90 mt-2 p-0 border border-dark shadow rounded">
+    <div class="container w-90 mt-2 p-0 shadow rounded">
 
         <div class="container border-dark border-bottom p-1 d-flex justify-content-between align-items-center">
             <h4 class="mt-2">Ticket Information</h4>
