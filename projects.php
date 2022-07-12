@@ -78,7 +78,7 @@
                 while($ticketsRow = mysqli_fetch_assoc($ticketResultData)){
                     $authorName = getUsername($conn, $ticketsRow['ticketsAuthorID']);
 
-                    echo "<a class='text-decoration-none text-dark' href='ticketInfo.php?ticketID=$ticketsRow[ticketsID]'><div class='container w-100 m-0 p-1 border'>";
+                    echo "<a class='text-decoration-none text-dark' href='ticketInfo.php?ticketID=$ticketsRow[ticketsID]'><div class='container w-100 m-0 p-1 border overflow-auto'>";
                     echo '<h5 class="my-2">'.$ticketsRow['ticketsTitle'].'</h5>';
                     echo '<p class="mb-0">Status:</p>';
                     echo '<p class="mb-2 p-1 rounded" style="text-transform: capitalize; background-color: #94cc6c; width: max-content;">'.$ticketsRow['ticketsStatus'].'</p>';
