@@ -71,7 +71,7 @@
             </div>
             <?php
                 if(mysqli_num_rows($ticketResultData) == 0){
-                    echo "<div class='container px-2 border-bottom'>";
+                    echo "<div class='container px-2 border-bottom overflow-auto'>";
                     echo "<p class='my-2'>No current tickets</p>";
                     echo "</div>";
                 }
